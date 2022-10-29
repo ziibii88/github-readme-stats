@@ -1,19 +1,38 @@
-require("@testing-library/jest-dom");
-const renderWakatimeCard = require("../src/cards/wakatime-card");
-
-const { wakaTimeData } = require("./fetchWakatime.test");
+import { queryByTestId } from "@testing-library/dom";
+import "@testing-library/jest-dom";
+import { renderWakatimeCard } from "../src/cards/wakatime-card.js";
+import { getCardColors } from "../src/common/utils.js";
+import { wakaTimeData } from "./fetchWakatime.test.js";
 
 describe("Test Render Wakatime Card", () => {
   it("should render correctly", () => {
     const card = renderWakatimeCard(wakaTimeData.data);
-
-    expect(card).toMatchSnapshot();
+    expect(getCardColors).toMatchSnapshot();
   });
 
   it("should render correctly with compact layout", () => {
     const card = renderWakatimeCard(wakaTimeData.data, { layout: "compact" });
 
     expect(card).toMatchSnapshot();
+  });
+
+  it("should render correctly with compact layout when langs_count is set", () => {
+    const card = renderWakatimeCard(wakaTimeData.data, {
+      layout: "compact",
+      langs_count: 2,
+    });
+
+    expect(card).toMatchSnapshot();
+  });
+
+  it("should hide languages when hide is passed", () => {
+    document.body.innerHTML = renderWakatimeCard(wakaTimeData.data, {
+      hide: ["YAML", "Other"],
+    });
+
+    expect(queryByTestId(document.body, /YAML/i)).toBeNull();
+    expect(queryByTestId(document.body, /Other/i)).toBeNull();
+    expect(queryByTestId(document.body, /TypeScript/i)).not.toBeNull();
   });
 
   it("should render translations", () => {
@@ -25,5 +44,27 @@ describe("Test Render Wakatime Card", () => {
       document.querySelector('g[transform="translate(0, 0)"]>text.stat.bold')
         .textContent,
     ).toBe("本周没有编程活动");
+  });
+
+  it("should render without rounding", () => {
+    document.body.innerHTML = renderWakatimeCard(wakaTimeData.data, {
+      border_radius: "0",
+    });
+    expect(document.querySelector("rect")).toHaveAttribute("rx", "0");
+    document.body.innerHTML = renderWakatimeCard(wakaTimeData.data, {});
+    expect(document.querySelector("rect")).toHaveAttribute("rx", "4.5");
+  });
+
+  it('should show "no coding activitiy this week" message when there hasn not been activity', () => {
+    document.body.innerHTML = renderWakatimeCard(
+      {
+        ...wakaTimeData.data,
+        languages: undefined,
+      },
+      {},
+    );
+    expect(document.querySelector(".stat").textContent).toBe(
+      "No coding activity this week",
+    );
   });
 });

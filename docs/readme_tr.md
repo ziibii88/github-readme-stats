@@ -52,6 +52,8 @@
     .
     <a href="/docs/readme_nl.md">Nederlands</a>
     .
+    <a href="/docs/readme_np.md">नेपाली</a>
+    .
     <a href="/docs/readme_tr.md">Türkçe</a>
   </p>
 </p>
@@ -71,10 +73,10 @@
 
 Alt kısımdaki kodu Kopyalayın ve yapıştırın. İşte bu kadar. Çok basit!
 
-`?username=` değerini kendi Github kullanıcı adınız ile değiştirin.
+`?username=` değerini kendi GitHub kullanıcı adınız ile değiştirin.
 
 ```md
-[![Anurag'nın Github İstatistikleri](https://github-readme-stats.vercel.app/api?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
+[![Anurag'nın GitHub İstatistikleri](https://github-readme-stats.vercel.app/api?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
 ```
 _Not: Şu sıralamalar mevcut: S+ (en üst 1%), S (en üst 25%), A++ (en üst 45%), A+ (en üst 60%), and B+ (herkes).
 Buradaki değerler [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function) ile hesaplanırken; commitler, katkılar, hatalar, yıldızlar, çekme istekleri, takipçiler ve sahip olunan depolar (repository) göz önünde bulundurulamaktadır.
@@ -159,7 +161,6 @@ bg_color içerisinde birden fazla rengi gradient olarak göstermek için virgül
 - `hide` - Spesifik özellikleri istatistiklerden gizleyebilirsiniz.  _(Virgül ile ayırılmış değerlerle)_
 - `hide_title` - _(boolean)_
 - `hide_rank` - _(boolean)_ Sıralamayı gizler ve kartın genişliğini otomatik olarak tekrar düzenler
-- `hide_border` - _(boolean)_
 - `show_icons` - _(boolean)_
 - `include_all_commits` - _(boolean)_ Sadece bu yılın değil tüm zamanlarda yaptığınız commit sayısını gösterir
 - `count_private` - _(boolean)_ Özel depolarda yaptığınız commitleri gösterir
@@ -175,7 +176,6 @@ bg_color içerisinde birden fazla rengi gradient olarak göstermek için virgül
 
 - `hide` - Belirli bir dili listede gizler _(Virgül ile ayırılmış değerlerle)_
 - `hide_title` - _(boolean)_
-- `hide_border` - _(boolean)_
 - `layout` - Uygun olan iki tasarım / layout arasında değişiklik yapar `default` & `compact`
 - `card_width` - Kartın genişliğini manuel olarak belirler _(number)_
 - `langs_count` - 1-10 arasında istediğiniz kadar dil gösterebilirsiniz. Varsayılan: 5 _(number)_
@@ -199,7 +199,7 @@ bg_color içerisinde birden fazla rengi gradient olarak göstermek için virgül
 
 # GitHub Ekstra Pinler
 
-Github ekstra pinler profilinize 6'dan fazla repoyu / depoyu profilinizde pinleyebilirsiniz.
+GitHub ekstra pinler profilinize 6'dan fazla repoyu / depoyu profilinizde pinleyebilirsiniz.
 
 Hey! Artık 6 pin ile kısıtlı kalmayacaksınız!
 
@@ -225,7 +225,7 @@ Endpoint: `api/pin?username=mustafacagri&repo=github-readme-stats`
 
 En çok kullanılan diller kartı kullanıcının en çok kullandığı dilleri gösterir.
 
-_NOTE: En çok kullanılan dillerde yer alan bilgiler sizin yeteneğinizi ve benzeri şeyleri göstermek. Bu, kodlarınızda en çok kullandığınız dilleri gösteren bir Github metriğidir. Ayrıca, github-readme-stats'ın yeni özelliğidir.
+_NOTE: En çok kullanılan dillerde yer alan bilgiler sizin yeteneğinizi ve benzeri şeyleri göstermek. Bu, kodlarınızda en çok kullandığınız dilleri gösteren bir GitHub metriğidir. Ayrıca, github-readme-stats'ın yeni özelliğidir.
 
 ### Kullanım
 
@@ -301,37 +301,37 @@ Endpoint: `api/top-langs?username=mustafacagri`
 
 - Varsayılan
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=anuraghazra)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra)
 
 - Belirli istatistikler gizli
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&hide=contribs,issues)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&hide=contribs,issues)
 
 - İkonlar gösteriliyor
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&hide=issues&show_icons=true)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&hide=issues&show_icons=true)
 
 - Tüm commitler dahil
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&include_all_commits=true)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&include_all_commits=true)
 
 - Temalar
 
 [default themes](#themes) adresinden istediğiniz temayı seçin.
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=mustafacagri&show_icons=true&theme=radical)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mustafacagri&show_icons=true&theme=radical)
 
 - Gradient
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
 
 - İstatistik Kartını Düzenleyin
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api/?username=anuraghazra&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api/?username=anuraghazra&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
 - Kartın dilini seçin
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api/?username=anuraghazra&locale=es)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api/?username=anuraghazra&locale=es)
 
 - Repo kartı düzenleyin
 
@@ -351,7 +351,7 @@ Endpoint: `api/top-langs?username=mustafacagri`
 
 Genellikle resimleri yan yana düzenleyemezsiniz. Bunu yapmak için şu yaklaşımı kullanabilirsiniz:
 
-```md
+```html
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=github-readme-stats" />
 </a>
@@ -365,7 +365,7 @@ Genellikle resimleri yan yana düzenleyemezsiniz. Bunu yapmak için şu yaklaş�
 
 #### [@codeSTACKr'ın Yayınladığı Video Eğitimine Göz Atın](https://youtu.be/n6d4KHSKqGk?t=107)
 
-Github API saatte sadece 5.000 isteğe izin verdiği için `https://github-readme-stats.vercel.app/api` adresindeki API'm bu limite muhtemelen takılmış olabilir. Eğer projeyi kendi Vercel sunucunuzda yayınlarsanız, böyle bir sorun yaşamayabilirsiniz. Deploy butonuna tıkla ve deploy başlasın!
+GitHub API saatte sadece 5.000 isteğe izin verdiği için `https://github-readme-stats.vercel.app/api` adresindeki API'm bu limite muhtemelen takılmış olabilir. Eğer projeyi kendi Vercel sunucunuzda yayınlarsanız, böyle bir sorun yaşamayabilirsiniz. Deploy butonuna tıkla ve deploy başlasın!
 
 
 NOT: [#58](https://github.com/anuraghazra/github-readme-stats/pull/58) geliştirmesi sonrasında anlamadığımız bir şekilde 5.000 istek limitine takılmıyoruz :)
@@ -378,9 +378,9 @@ NOT: [#58](https://github.com/anuraghazra/github-readme-stats/pull/58) geliştir
 1. [vercel.com](https://vercel.com/) adresine gidin
 1. `Log in`'e tıklayın
    ![](https://files.catbox.moe/tct1wg.png)
-1. `Continue with GitHub`'e basarak Github ile giriş yapın
+1. `Continue with GitHub`'e basarak GitHub ile giriş yapın
    ![](https://files.catbox.moe/btd78j.jpeg)
-1. Github'a giriş yapın ve eğer çıkarsa tüm repolara izin verin.
+1. GitHub'a giriş yapın ve eğer çıkarsa tüm repolara izin verin.
 1. Bu repoyu fork'layın
 1. [Vercel dashboard](https://vercel.com/dashboard)'unuza geri dönün.
 1. `Import Project`'i seçin.

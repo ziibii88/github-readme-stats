@@ -1,14 +1,12 @@
-require("@testing-library/jest-dom");
-const {
-  kFormatter,
+import { queryByTestId } from "@testing-library/dom";
+import "@testing-library/jest-dom";
+import {
   encodeHTML,
-  renderError,
-  FlexLayout,
   getCardColors,
+  kFormatter,
+  renderError,
   wrapTextMultiline,
-} = require("../src/common/utils");
-
-const { queryByTestId } = require("@testing-library/dom");
+} from "../src/common/utils.js";
 
 describe("Test utils.js", () => {
   it("should test kFormatter", () => {
@@ -32,7 +30,9 @@ describe("Test utils.js", () => {
     expect(
       queryByTestId(document.body, "message").children[0],
     ).toHaveTextContent(/Something went wrong/gim);
-    expect(queryByTestId(document.body, "message").children[1]).toBeEmpty(2);
+    expect(
+      queryByTestId(document.body, "message").children[1],
+    ).toBeEmptyDOMElement(2);
 
     // Secondary message
     document.body.innerHTML = renderError(
@@ -44,33 +44,13 @@ describe("Test utils.js", () => {
     ).toHaveTextContent(/Secondary Message/gim);
   });
 
-  it("should test FlexLayout", () => {
-    const layout = FlexLayout({
-      items: ["<text>1</text>", "<text>2</text>"],
-      gap: 60,
-    }).join("");
-
-    expect(layout).toBe(
-      `<g transform=\"translate(0, 0)\"><text>1</text></g><g transform=\"translate(60, 0)\"><text>2</text></g>`,
-    );
-
-    const columns = FlexLayout({
-      items: ["<text>1</text>", "<text>2</text>"],
-      gap: 60,
-      direction: "column",
-    }).join("");
-
-    expect(columns).toBe(
-      `<g transform=\"translate(0, 0)\"><text>1</text></g><g transform=\"translate(0, 60)\"><text>2</text></g>`,
-    );
-  });
-
   it("getCardColors: should return expected values", () => {
     let colors = getCardColors({
       title_color: "f00",
       text_color: "0f0",
       icon_color: "00f",
       bg_color: "fff",
+      border_color: "fff",
       theme: "dark",
     });
     expect(colors).toStrictEqual({
@@ -78,6 +58,7 @@ describe("Test utils.js", () => {
       textColor: "#0f0",
       iconColor: "#00f",
       bgColor: "#fff",
+      borderColor: "#fff",
     });
   });
 
@@ -87,6 +68,7 @@ describe("Test utils.js", () => {
       text_color: "0f0",
       icon_color: "00f",
       bg_color: "fff",
+      border_color: "invalidColor",
       theme: "dark",
     });
     expect(colors).toStrictEqual({
@@ -94,6 +76,7 @@ describe("Test utils.js", () => {
       textColor: "#0f0",
       iconColor: "#00f",
       bgColor: "#fff",
+      borderColor: "#e4e2e2",
     });
   });
 
@@ -106,6 +89,7 @@ describe("Test utils.js", () => {
       textColor: "#9f9f9f",
       iconColor: "#79ff97",
       bgColor: "#151515",
+      borderColor: "#e4e2e2",
     });
   });
 });
@@ -132,5 +116,12 @@ describe("wrapTextMultiline", () => {
       2,
     );
     expect(multiLineText).toEqual(["Hello", "world long..."]);
+  });
+  it("should wrap chinese by punctuation", () => {
+    let multiLineText = wrapTextMultiline(
+      "专门为刚开始刷题的同学准备的算法基地，没有最细只有更细，立志用动画将晦涩难懂的算法说的通俗易懂！",
+    );
+    expect(multiLineText.length).toEqual(3);
+    expect(multiLineText[0].length).toEqual(18 * 8); // &#xxxxx; x 8
   });
 });
